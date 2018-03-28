@@ -1,0 +1,72 @@
+@mixin pseudo( $pos, $display, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin bg-style($bg-color, $color){
+    background-color: $bg-color;
+    color: $color;
+    @extend .fast-e;
+    &.btn{
+        background-color: $bg-color;
+        color: $color;
+        &:hover{
+            background-color: darken($bg-color,15%)
+        }
+    }
+}
+
+@mixin flex-align($pos){
+    display: flex;
+    flex-wrap: wrap;
+    & > *{
+        flex: $pos;
+    }
+   
+    flex-direction: column;
+    @media (min-width: $sm) {
+        flex-direction: row;
+    }
+}
+
+@mixin sprites($width, $height){
+    background-image: url('../images/sprites.png');
+    height: $height;
+    width: $width;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+@mixin sprites-custom($width, $height, $locale){
+    background-image: url($locale);
+    height: $height;
+    width: $width;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+
+@mixin media($size,$limit){
+    @if $limit == 'min'{
+        @media (min-width: $size){@content};
+    }
+    @else{
+        @media (max-width: $size){@content};
+    }
+}

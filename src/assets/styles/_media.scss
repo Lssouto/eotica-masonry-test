@@ -1,0 +1,10 @@
+@include media($sm,'min'){
+    .mobile-only{
+        display: none !important;
+    }
+}
+@include media($md,'max'){
+    .desktop-only{
+        display: none !important;
+    }
+}

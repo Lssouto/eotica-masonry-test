@@ -1,0 +1,55 @@
+#items{
+    background-color: $light-gray;
+    .masonry{
+        padding-top: 35px;
+        & > *{
+            padding: 0;
+            width: 100%;
+            @include media($sm,'min'){
+                width: 250px;
+            }
+        }
+        & > li{
+            color: $font;
+            font-size: 17px;
+            border-radius: 6px;
+            overflow: hidden;
+            @include media($sm, 'max'){
+                img{
+                    width: 100%;
+                }
+            }
+            h3{
+                color: $font;
+                text-align: left;
+                font-size: 20px;
+            }
+            .stars{
+                min-height: 42px;
+                border-top: 2px solid $light-gray;
+                color: $medium-gray;
+                padding-top: 15px;
+                span.fa-star{
+                    font-size: 22px;
+                }
+                .active{
+                    color: #b9cb41
+                }
+                span.fa-stack{
+                    float: right;
+                    font-size: 14px;
+                }
+            }
+            span.fa-map-marker{
+                padding-right: 10px;
+            }
+            p{
+                font-size: 14px;
+            }
+            & > *:not(img){
+                padding: 0 20px;
+                margin: 15px 0;
+            }
+        }
+    }
+}

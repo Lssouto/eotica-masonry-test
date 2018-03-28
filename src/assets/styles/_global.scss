@@ -1,0 +1,43 @@
+.relative{
+    position: relative;
+}
+.thin{
+    font-weight: thin;
+}
+.max-w{
+    width: 100%;
+}
+.p-0{
+    padding: 0 !important;
+}
+.m-0{
+    margin: 0 !important
+}
+.bg-light-gray{
+    background-color: $light-gray
+}
+//Flex
+.flex-align{
+    @include flex-align(1 1 auto);
+}
+
+//Input
+.input-container{
+    position: relative;
+    .form-control{
+        background-color: $light-gray;
+        border: 1px solid $medium-gray;
+    }
+    .fa{
+        font-size: 22px;
+        color: darken($medium-gray,15%);
+        background-color: $light-gray;
+        padding: 4px 8px;
+    }
+    .inside{
+        position: absolute;
+        top: 48%;
+        right: 7px;
+        transform: translateY(-48%);
+    }
+}

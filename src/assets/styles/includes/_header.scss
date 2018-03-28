@@ -1,0 +1,56 @@
+header{
+    background-color: $white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px $font;
+    .container > .flex-align{
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        & > div{
+            margin-top: 15px;
+        }
+    }
+    .container-logo{
+        @include media($sm, 'max'){
+            text-align: center;
+        }
+    }
+    .input-container{
+        width: 50px;
+        flex: 0 1 auto;
+        label{
+            display: initial;
+        }
+        .form-control{
+            @extend .fast-e;
+        }
+        @include media($sm, 'max'){
+            .form-control{
+                position: absolute;
+                right: 0;
+                top: -20px;
+                &:focus{
+                    width: 150px;
+                }
+            }
+        }
+        @include media($sm,'min'){
+            flex: 1 1 auto;
+            flex-grow: 3;
+        }
+    }
+    .container-user{
+        @include flex-align(0 0 auto);
+        align-items: center;
+        .circle{
+            border-radius: 50%;
+            overflow: hidden;
+            width:40px;
+            height: 40px;
+            margin-right: 25px;
+        }
+        @include media($sm,'min'){
+            padding-left: 75px;
+        }
+    }
+}

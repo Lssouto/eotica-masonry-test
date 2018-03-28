@@ -1,0 +1,24 @@
+.masonry {
+    margin: 8px 0 0 0 ;
+    padding: 0;
+    column-gap: 1.5em;
+    font-size: .85em;
+    & > *{
+        display: inline-block;
+        background: #fff;
+        padding: 1em;
+        margin: 0 0 1.5em;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 4px 0 #ccc;
+    }
+    @include media(767px, 'max'){
+        column-count: 1;
+    }
+    @include media(768px, 'min'){
+        column-count: 3;
+    }
+    @include media(900px, 'min'){
+        column-count: 4;
+    }
+}
